@@ -1,25 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png'
-import { Icon } from '@iconify/react';
+import { UserContext } from '../context/UserProvider';
+
+import logo from '../../assets/logo2.png'
+import { Icon as UserAcct } from '@iconify/react';
 
 
 export default function Nav(){
-//     // const {logout, token} = useContext(UserContext)
+    const {logout, token} = useContext(UserContext)
 
     return (
         <div>
             <header>
-                <Link to='/Home' className='nav'>
-                    <img src={logo} alt='davenport logo' id='logo'/>
-                </Link>
-                <Link to='/Sofas' className='nav'>Sofas</Link>
-                <Link to='/Ottomans' className='nav'>Ottomans</Link>
-                <Link to='/Tables' className='nav'>Tables</Link>
+                <span id='navLeft'>
+                    <Link to='/Sofas' className='nav' style={{textDecoration: "none"}}>Sofas</Link>
+                    <Link to='/Ottomans' className='nav' style={{textDecoration: "none"}}>Ottomans</Link>
+                    <Link to='/Tables' className='nav' style={{textDecoration: "none"}}>Tables</Link>
+                </span>
+
+                <span id='logoSpan'>
+                    <Link to='/Home' className='nav'>
+                        <img src={logo} alt='davenport logo' id='logo'/>
+                    </Link>
+                </span>
+                
                 <span id='navRight'>
-                    <Link to='/Tables' id='bag' className='nav'>Bag()</Link>
-                    <Link to='/User' className='nav'>
-                        <Icon icon="carbon:user-filled" height="22" alt='user icon' id='icon'/>
+                    <Link to='/Bag' id='bag' className='nav' style={{textDecoration: "none"}}>Bag({/*cart.length*/})</Link>
+                    <Link to='/User' className='nav' style={{textDecoration: "none"}}>   {/* Instead of linking to a page can this just bring up a login/sign up window */}
+                        {token && <UserAcct icon="carbon:user-filled" height="22" alt='user icon' onClick={logout} />}
                     </Link>
                 </span>
             </header>
