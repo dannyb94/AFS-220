@@ -25,7 +25,7 @@ function App(){
 
         <Routes>
           <Route exact = {true} path = "/" element = {token ? <Navigate to = '/profile'/> : <Auth/>}/>
-          <Route path="/profile" element={<ProtectedRoute component = {Profile} redirectTo = '/bag' token = {token} />} />
+          <Route path="/profile/*" element={<ProtectedRoute component = {Profile} redirectTo = '/bag' token = {token} />} />
           <Route path = "/home" element = {<Home/>} />
           <Route path = "/sofas" element = {<Sofas/>} />
           <Route path = "/ottomans" element = {<Ottomans/>} />

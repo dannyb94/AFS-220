@@ -9,6 +9,11 @@ import { Icon as UserAcct } from '@iconify/react';
 export default function Nav(){
     const {logout, token} = useContext(UserContext)
 
+  const getOut = (user) => {
+    console.log("Logged out")
+    logout(user)
+  }
+
     return (
         <div>
             <header>
@@ -27,7 +32,7 @@ export default function Nav(){
                 <span id='navRight'>
                     <Link to='/Bag' id='bag' className='nav' style={{textDecoration: "none"}}>Bag({/*cart.length*/})</Link>
                     <Link to='/User' className='nav' style={{textDecoration: "none"}}>   {/* Instead of linking to a page can this just bring up a login/sign up window */}
-                        {token && <UserAcct icon="carbon:user-filled" height="22" alt='user icon' onClick={logout} />}
+                        {token && <UserAcct icon="carbon:user-filled" height="22" alt='user icon' onClick={()=> getOut()} />}
                     </Link>
                 </span>
             </header>

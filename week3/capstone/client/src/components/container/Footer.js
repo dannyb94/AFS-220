@@ -40,6 +40,7 @@ export default function Footer(){
         <div>
             <footer>
                 <table id='moreInfo'>
+                    <tbody>
                     <tr>
                         <td>Company</td>
                         <td>Support</td>
@@ -60,6 +61,7 @@ export default function Footer(){
                         <td></td>
                         <td>FAQ</td>
                     </tr>
+                    </tbody>
                 </table>
 
                 <div id='contactBox'>
@@ -67,7 +69,7 @@ export default function Footer(){
                     <p>Available 9am-8pm PST, 7 days a week.</p>
                     <Link to='/Home' className='footer'>
                         <table>
-                        
+                            <tbody>
                             <tr>
                                 <td>
                                     <Phone icon="bi:phone" height="30" id='phone' style={inlineStyles.icons} />
@@ -92,7 +94,7 @@ export default function Footer(){
                                     <RtArrow icon="ep:arrow-right" height="20" style={inlineStyles.rtArrow} />
                                 </td>
                             </tr>
-                            
+                            </tbody>
                         </table>
                     </Link>
                 </div>
