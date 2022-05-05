@@ -15,15 +15,13 @@ function Sofas(){
   // Confused how to link the length of cart items to "Bag()" in the navbar
 
   return (
-      <div>
-        <h1>Sofas</h1>
-
+      <div className="mainCntnr">
         {dataState.sofas.map((sofa) => (
           <div>
-            <img src={sofa.image} alt={sofa.name} />
-            <p>{sofa.name}</p>
-            <p>{"$"[sofa.price]}</p>
-            <Link to='/profile'><button onClick={() => addToCart(sofa)}> + </button></Link>
+            <img src={sofa.image} alt={sofa.name} className="images" />
+            <p className="prdtNames">{sofa.name}</p>
+            <p className="prices">$ {sofa.price}</p>
+            <Link to='/profile'><button onClick={() => addToCart(sofa)} className="addBtn" > + </button></Link>
           </div>
         ))}
       </div>
