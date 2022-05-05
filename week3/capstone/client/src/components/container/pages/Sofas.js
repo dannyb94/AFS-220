@@ -21,7 +21,7 @@ function Sofas(){
             <img src={sofa.image} alt={sofa.name} className="images" />
             <p className="prdtNames">{sofa.name}</p>
             <p className="prices">$ {sofa.price}</p>
-            <Link to='/profile'><button onClick={() => addToCart(sofa)} className="addBtn" > + </button></Link>
+            <Link to='/bag'><button onClick={() => addToCart(sofa)} className="addBtn" > + </button></Link>
           </div>
         ))}
       </div>

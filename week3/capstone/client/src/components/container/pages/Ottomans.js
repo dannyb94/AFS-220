@@ -17,7 +17,7 @@ function Ottomans(){
             <img src={ottoman.image} alt={ottoman.name} className="images" />
             <p className="prdtNames">{ottoman.name}</p>
             <p className="prices">$ {ottoman.price}</p>
-            <Link to='/profile'><button onClick={() => addToCart(ottoman)} className="addBtn" > + </button></Link>
+            <Link to='/bag'><button onClick={() => addToCart(ottoman)} className="addBtn" > + </button></Link>
           </div>
         ))}
       </div>

@@ -17,7 +17,7 @@ function Tables(){
             <img src={table.image} alt={table.name} className="images" />
             <p className="prdtNames">{table.name}</p>
             <p className="prices">$ {table.price}</p>
-            <Link to='/profile'><button onClick={() => addToCart(table)} className="addBtn" > + </button></Link>
+            <Link to='/bag'><button onClick={() => addToCart(table)} className="addBtn" > + </button></Link>
           </div>
         ))}
       </div>
