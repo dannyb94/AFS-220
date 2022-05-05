@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import './index.css';
 import UserProvider from './components/context/UserProvider'
+import DataProvider from './components/context/DataProvider';
 import App from './App';
 
 // ReactDOM.render(
@@ -11,5 +12,5 @@ import App from './App';
 //   document.getElementById('root')
 // );
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<UserProvider><App /></UserProvider>)
+root.render(<DataProvider><UserProvider><App /></UserProvider></DataProvider>)
 

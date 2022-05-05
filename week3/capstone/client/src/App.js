@@ -10,9 +10,9 @@ import Auth from './components/Auth/Auth';
 import Profile from './components/container/pages/Profile';
 import Home from './components/container/pages/Home';
 import Sofas from './components/container/pages/Sofas';
-import Ottomans from './components/container/pages/Ottomans';
-import Tables from './components/container/pages/Tables';
-import Bag from './components/container/pages/Bag';
+// import Ottomans from './components/container/pages/Ottomans';
+// import Tables from './components/container/pages/Tables';
+import CartList from './components/container/pages/Cart/CartList';
 
 
 function App(){
@@ -25,12 +25,12 @@ function App(){
 
         <Routes>
           <Route exact = {true} path = "/" element = {token ? <Navigate to = '/profile'/> : <Auth/>}/>
-          <Route path="/profile" element={<ProtectedRoute component = {Profile} redirectTo = '/' token = {token} />} />
+          <Route path="/profile" element={<ProtectedRoute component = {Profile} redirectTo = '/bag' token = {token} />} />
           <Route path = "/home" element = {<Home/>} />
           <Route path = "/sofas" element = {<Sofas/>} />
-          <Route path = "/ottomans" element = {<Ottomans/>} />
-          <Route path = "/tables" element = {<Tables/>} />
-          <Route path = "/bag" element = {<Bag/>} />
+          {/* <Route path = "/ottomans" element = {<Ottomans/>} /> */}
+          {/* <Route path = "/tables" element = {<Tables/>} /> */}
+          <Route path = "/bag" element = {<CartList/>} />
         </Routes>
 
         <Footer />

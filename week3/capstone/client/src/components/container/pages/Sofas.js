@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 // import UserContext from "../../context/UserProvider";
+import {DataContext} from "../../context/DataProvider";
 
 function Sofas(){
-  const [sofas] = useState([])
+  // const [sofas] = useState([])
+  const { setCart, dataState } = useContext(DataContext)
 
-  // const addToCart = (sofa) => {
-  //   console.log("Added to cart")
-  //   setCart([...cart, sofa])
-  // }
+  const addToCart = (sofa) => {
+    console.log("Added to cart")
+    setCart(sofa)
+  }
 
   // Confused how to link the length of cart items to "Bag()" in the navbar
 
@@ -15,14 +18,14 @@ function Sofas(){
       <div>
         <h1>Sofas</h1>
 
-        {/* {sofas.map((sofa) => (
+        {dataState.sofas.map((sofa) => (
           <div>
-            <img src={sofas.image} alt={sofas.name} />
-            <p>{sofas.name}</p>
-            <p>{"$"[sofas.price]}</p>
-            <button onClick={() => addToCart(sofa)}> + </button>
+            <img src={sofa.image} alt={sofa.name} />
+            <p>{sofa.name}</p>
+            <p>{"$"[sofa.price]}</p>
+            <Link to='/profile'><button onClick={() => addToCart(sofa)}> + </button></Link>
           </div>
-        ))} */}
+        ))}
       </div>
   );
 }

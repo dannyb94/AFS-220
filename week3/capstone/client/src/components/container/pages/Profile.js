@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from '../../context/UserProvider';
-import Bag from './Bag'
+import Cart from './Cart/Cart'
 
 
 export default function Profile(){
@@ -8,7 +8,7 @@ export default function Profile(){
     return (
         <div>
             <h1>Welcome {username}</h1>
-            <Bag />
+            <Cart />
         </div>
     )
 }
